@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 import ToDo from "./ToDo";
 
-const {height, width} = Dimensions.get("window");/* window 기준으로 간격을 정해주기 위해 */
+const { height, width } = Dimensions.get("window");/* window 기준으로 간격을 정해주기 위해 */
 
 export default class App extends React.Component{
   state = {
@@ -33,7 +33,7 @@ export default class App extends React.Component{
             returnKeyType={"done"}
             autoCorrect={false}
           />
-          <ScrollView>
+          <ScrollView contentContainerStyle={styles.toDos}>
             <ToDo />
           </ScrollView>
         </View>
@@ -87,5 +87,8 @@ const styles = StyleSheet.create({
     borderBottomColor: "#bbb",
     borderBottomWidth: 1,
     fontSize: 25
+  },
+  toDos: {
+    alignItems: "center"
   }
 });
